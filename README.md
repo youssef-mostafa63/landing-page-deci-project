@@ -1,5 +1,7 @@
 # Dynamic Web Page Project
 
+### Part of Digital Egypt Cubs Initiative (DECI) | Udacity Scholarship
+
 ## Project Description
 
 This project is a responsive, interactive single page application that features:
@@ -32,3 +34,6 @@ This project is a responsive, interactive single page application that features:
 - **Mobile-First Approach** - Responsive design considerations
 - **Cross-Browser Compatibility** - Works on modern browsers
 - **Code Organization** - Modular JavaScript and CSS structure
+
+## Project Status
+**Graduated with honors** from Udacity review.
