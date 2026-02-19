@@ -1,0 +1,514 @@
+/*
+ * CSS written based on SMACSS architecture.
+ * To learn more, visit: http://smacss.com/
+ *
+ * For simplicity, no reset or normalize is added.
+ * To learn more, visit: https://css-tricks.com/reboot-resets-reasoning/
+ *
+*/
+
+/* ---- Base Rules ---- */
+body {
+  background: rgb(219, 226, 232);
+  background: linear-gradient(
+    0deg,
+    rgba(219, 226, 232, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  margin: 0;
+  font-family: "Merriweather", serif;
+  color: #171a53;
+}
+
+/* Typeography General*/
+h1 {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 3em;
+  margin: 2em 1rem;
+}
+
+@media only screen and (min-width: 35em) {
+  h1 {
+    font-size: 7em;
+    margin: 1em 4rem 0;
+  }
+}
+
+h2 {
+  border-bottom: 3px solid #b181ff;
+  font-family: "Oxygen", Sans-Serif;
+  font-size: 3em;
+}
+
+p {
+  line-height: 1.6em;
+}
+/* ---- Layout Rules ---- */
+main {
+  margin: 10vh 1em 10vh;
+}
+
+.main-hero {
+  min-height: 40vh;
+  padding-top: 3em;
+}
+
+section {
+  position: relative;
+  min-height: 80vh;
+}
+
+/* ---- Module Rules ---- */
+
+/* Navigation Styles*/
+.navbar__menu ul {
+  padding-left: 0;
+  margin: 0;
+  text-align: right;
+}
+
+.navbar__menu li {
+  display: inline-block;
+}
+
+.navbar__menu .menu__link {
+  display: block;
+  padding: 1em;
+  font-weight: bold;
+  text-decoration: none;
+  color: #171a53;
+}
+
+.navbar__menu .menu__link:hover {
+  background: #2015ff;
+  color: #fff;
+  transition: ease 0.3s all;
+}
+
+/* Header Styles */
+.page__header {
+  background: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+}
+
+/* Footer Styles */
+.page__footer {
+  background: #171a53;
+  padding: 3em;
+  color: #fff;
+}
+
+.page__footer p {
+  color: #fff;
+}
+
+/* ---- Theme Rules ---- */
+/* Landing Container Styles */
+.landing__container {
+  padding: 1em;
+  text-align: left;
+}
+
+@media only screen and (min-width: 35em) {
+  .landing__container {
+    max-width: 50em;
+    padding: 4em;
+  }
+}
+
+section:nth-of-type(even) .landing__container {
+  margin-right: 0;
+  margin-left: auto;
+  text-align: right;
+}
+
+/* Background Circles */
+section:nth-of-type(odd) .landing__container::before {
+  content: "";
+  background: rgba(189, 234, 9, 0.8);
+  background: linear-gradient(
+    0deg,
+    rgba(189, 234, 9, 0.5) 0%,
+    rgba(189, 234, 9, 1) 100%
+  );
+  position: absolute;
+  z-index: -5;
+  width: 20vh;
+  height: 20vh;
+  border-radius: 50%;
+  opacity: 0;
+  transition: ease 0.5s all;
+}
+
+section:nth-of-type(even) .landing__container::before {
+  content: "";
+  background: rgb(101, 151, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(101, 151, 255, 0.5) 0%,
+    rgba(101, 151, 255, 1) 100%
+  );
+  position: absolute;
+  top: 3em;
+  right: 3em;
+  z-index: -5;
+  width: 10vh;
+  height: 10vh;
+  border-radius: 50%;
+  opacity: 0;
+  transition: ease 0.5s all;
+}
+
+section:nth-of-type(even) .landing__container::after {
+  content: "";
+  background: rgb(177, 129, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(177, 129, 255, 0.5) 0%,
+    rgba(177, 129, 255, 1) 100%
+  );
+  position: absolute;
+  left: 3em;
+  bottom: -1em;
+  z-index: -5;
+  width: 25vh;
+  height: 25vh;
+  border-radius: 50%;
+  opacity: 0;
+  transition: ease 0.5s all;
+}
+
+section:nth-of-type(3n) .landing__container::after {
+  content: "";
+  background: rgb(32, 21, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(32, 21, 255, 0.5) 0%,
+    rgba(32, 21, 255, 1) 100%
+  );
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -5;
+  width: 15vh;
+  height: 15vh;
+  border-radius: 50%;
+  opacity: 0;
+  transition: ease 0.5s all;
+}
+
+section:nth-of-type(3n + 1) .landing__container::after {
+  content: "";
+  background: rgb(10, 197, 161);
+  background: linear-gradient(
+    0deg,
+    rgba(10, 197, 161, 0.5) 0%,
+    rgba(10, 197, 161, 1) 100%
+  );
+  position: absolute;
+  right: 20vw;
+  bottom: -5em;
+  z-index: -5;
+  width: 15vh;
+  height: 15vh;
+  border-radius: 50%;
+  opacity: 0;
+  transition: ease 0.5s all;
+}
+
+section:nth-of-type(5n) .landing__container::after {
+  content: "";
+  background: rgb(177, 129, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(177, 129, 255, 0.5) 0%,
+    rgba(177, 129, 255, 1) 100%
+  );
+  position: absolute;
+  right: 20vw;
+  bottom: -5em;
+  z-index: -5;
+  width: 15vh;
+  height: 15vh;
+  border-radius: 50%;
+  opacity: 0;
+  transition: ease 0.5s all;
+}
+
+/* ---- Theme State Rules ---- */
+/* Section Active Styles */
+section.active {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+section.active .landing__container::before {
+  opacity: 1;
+  animation: rotate 4s linear 0s infinite forwards;
+}
+
+section.active .landing__container::after {
+  opacity: 1;
+  animation: rotate 5s linear 0s infinite forwards reverse;
+}
+
+/* Section Active Styles Keyframe Animations */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg) translate(-1em) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translate(-1em) rotate(-360deg);
+  }
+}
+
+/* styles for Comments section and form */
+#comments-section {
+  background-color: #f8f9fa;
+  padding: 2rem 0;
+  z-index: 0;
+}
+
+#comments-container {
+  margin-bottom: 2rem;
+}
+
+.comment {
+  background: white;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.comment h4 {
+  margin-top: 0;
+  color: #171a53;
+}
+
+.comment p {
+  margin-bottom: 0;
+}
+
+/* Form Styles */
+#comment-form {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: "Merriweather", serif;
+}
+
+button {
+  background: #171a53;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Fira Sans", sans-serif;
+}
+
+button:hover {
+  background: #2015ff;
+}
+
+/* Responsive Layout Rules */
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 2.5em;
+    margin: 1em 1rem;
+  }
+
+  h2 {
+    font-size: 2em;
+    padding-top: 2em;
+  }
+
+  .landing__container {
+    padding: 2em 1em;
+  }
+
+  section {
+    min-height: auto;
+    padding: 2em 0;
+  }
+
+  /* for mobile */
+  section:nth-of-type(even) .landing__container,
+  section:nth-of-type(odd) .landing__container {
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .navbar__menu ul {
+    text-align: center;
+    white-space: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0.5em 0;
+  }
+
+  .navbar__menu li {
+    display: inline-block;
+    margin: 0 0.2em;
+  }
+
+  .navbar__menu .menu__link {
+    padding: 0.5em;
+    font-size: 0.9em;
+  }
+
+  #comments-section {
+    padding: 1rem 0;
+  }
+
+  #comment-form {
+    padding: 1rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 0.4rem;
+  }
+
+  button {
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* Small devices */
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 2em;
+    margin: 0.5em 0.5rem;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  .main-hero {
+    min-height: 30vh;
+    padding-top: 1.5em;
+  }
+
+  main {
+    margin: 8vh 0.5em 8vh;
+  }
+
+  /* Hide background circles on small devices */
+  .landing__container::before,
+  .landing__container::after {
+    display: none !important;
+  }
+
+  #comment-form h3 {
+    font-size: 1.2em;
+  }
+
+  .form-group label {
+    font-size: 0.9em;
+    margin-bottom: 0.3em;
+  }
+}
+
+/* Very small devices */
+@media only screen and (max-width: 400px) {
+  h1 {
+    font-size: 1.8em;
+  }
+
+  .navbar__menu .menu__link {
+    font-size: 0.8em;
+    padding: 0.3em 0.5em;
+  }
+
+  .comment {
+    padding: 0.8rem;
+  }
+
+  .comment h4 {
+    font-size: 1em;
+  }
+
+  .comment p {
+    font-size: 0.9em;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media only screen and (max-height: 500px) and (orientation: landscape) {
+  section {
+    min-height: 100vh;
+  }
+
+  .main-hero {
+    min-height: 30vh;
+  }
+}
+
+/* Tablet adjustments */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  h1 {
+    font-size: 5em;
+  }
+
+  .landing__container {
+    max-width: 90%;
+    padding: 3em;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  h1 {
+    margin-top: 120px;
+  }
+
+  .navbar__menu ul {
+    text-align: center;
+    white-space: normal;
+    overflow-x: hidden;
+    padding: 0.5em 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navbar__menu li {
+    display: inline-block;
+    margin: 0.2em;
+    flex-shrink: 0;
+  }
+
+  .navbar__menu .menu__link {
+    padding: 0.5em;
+    font-size: 0.9em;
+    white-space: nowrap;
+  }
+}
